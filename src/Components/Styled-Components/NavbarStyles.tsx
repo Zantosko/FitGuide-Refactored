@@ -10,7 +10,7 @@ export const Nav = styled.header`
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.2rem;
-	position: fixed;
+	/* position: fixed; */
 `;
 
 export const NavLeft = styled.div``;

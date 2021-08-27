@@ -69,18 +69,28 @@ export const Navbar: React.FC<NavbarProps> = () => {
 		<>
 			<Nav>
 				<NavLeft>
-					<Logo>
-						Fit<Special>Guide</Special>
-					</Logo>
+					<Link to='/' className='link'>
+						<Logo>
+							Fit<Special>Guide</Special>
+						</Logo>
+					</Link>
 				</NavLeft>
 				<NavRight>
 					<NavLinkContainer>
 						{size.width > 800 ? (
 							<>
-								<NavLink>Home</NavLink>
-								<NavLink>Calorie Needs</NavLink>
-								<NavLink>Recipes</NavLink>
-								<NavLink>Plan Your Workout</NavLink>
+								<Link to='/' className='link'>
+									<NavLink>Home</NavLink>
+								</Link>
+								<Link to='/calorie-needs' className='link'>
+									<NavLink>Calorie Needs</NavLink>
+								</Link>
+								<Link to='/recipes' className='link'>
+									<NavLink>Recipes</NavLink>
+								</Link>
+								<Link to='/workout-plans' className='link'>
+									<NavLink>Plan Your Workout</NavLink>
+								</Link>
 							</>
 						) : (
 							<IconSizer2>
