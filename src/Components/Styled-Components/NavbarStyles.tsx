@@ -114,8 +114,10 @@ export const IconSizer = styled.span`
 export const IconSizer2 = styled.span`
 	font-size: 24px;
 	color: #fff;
+	transition: all 0.3s ease;
 
 	&:hover {
 		cursor: pointer;
+		color: #29bbad;
 	}
 `;
