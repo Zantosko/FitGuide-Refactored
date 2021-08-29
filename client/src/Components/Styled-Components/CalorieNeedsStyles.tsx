@@ -25,3 +25,14 @@ export const Form = styled.form`
 	justify-content: center;
 	box-shadow: 0.1em 0.1em 1em rgba(0, 0, 0, 0.4);
 `;
+
+export const RadioContainer = styled.div`
+	width: 200px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 2rem;
+`;
+
+export const Input = styled.input`
+	margin-bottom: 2rem;
+`;
