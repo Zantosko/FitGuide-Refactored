@@ -3,8 +3,7 @@ import styled from 'styled-components';
 export const Nav = styled.header`
 	width: 100vw;
 	height: 75px;
-	background-color: #333;
-	opacity: 0.95;
+	background-color: black;
 	box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2);
 	display: flex;
 	justify-content: space-between;
@@ -62,7 +61,8 @@ export const Special = styled.span`
 export const Overlay = styled.div`
 	height: 100vh;
 	width: 100vw;
-	background: #333;
+	background: black;
+	opacity: 1;
 	position: absolute;
 	top: 0;
 	left: 0;

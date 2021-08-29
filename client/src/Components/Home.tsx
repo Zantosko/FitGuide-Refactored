@@ -1,11 +1,13 @@
 import React from 'react';
+import { Title, HomeButton } from './Styled-Components/HomeStyles';
 
 interface HomeProps {}
 
 export const Home: React.FC<HomeProps> = () => {
 	return (
-		<div>
-			<h1>Home</h1>
+		<div className='hero'>
+			<Title>FitGuide</Title>
+			<HomeButton>Get Started</HomeButton>
 		</div>
 	);
 };
