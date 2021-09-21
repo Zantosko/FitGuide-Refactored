@@ -3,8 +3,14 @@ import {
 	Container,
 	Title,
 	Form,
+	Radio,
 	RadioContainer,
 	Input,
+	Select,
+	Span,
+	Label,
+	ButtonContainer,
+	Button,
 } from './Styled-Components/CalorieNeedsStyles';
 
 interface CalorieNeedsProps {}
@@ -16,29 +22,42 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 			<Form action=''>
 				<RadioContainer>
 					<label htmlFor='gender'>
-						<input type='radio' name='gender' />
-						<span>Male</span>
+						<Radio type='radio' name='gender' />
+						<Span>Male</Span>
 					</label>
 					<label htmlFor='gender'>
-						<input type='radio' name='gender' />
-						<span>Female</span>
+						<Radio type='radio' name='gender' />
+						<Span>Female</Span>
 					</label>
 				</RadioContainer>
-				<label htmlFor='height'>Height</label>
+				<Label htmlFor='height'>Height</Label>
 				<Input type='text' name='height' />
-				<label htmlFor='weight'>Weight</label>
+				<Label htmlFor='weight'>Weight</Label>
 				<Input type='text' name='weight' />
-				<label htmlFor='age'>Age</label>
+				<Label htmlFor='age'>Age</Label>
 				<Input type='text' name='age' />
-				<label htmlFor='activity'>Activity Level</label>
-				<select name='' id=''>
-					<option value=''></option>
-					<option value=''></option>
-					<option value=''></option>
-					<option value=''></option>
-					<option value=''></option>
-				</select>
-				<button>Calculate</button>
+				<Label htmlFor='activity'>Activity Level</Label>
+				<Select name='' id=''>
+					<option value='' disabled selected>
+						How active are you?
+					</option>
+					<option value='1'>Sedentary (little or no exercise)</option>
+					<option value='2'>
+						Lightly Active (light exercise or sports 1-3 days/week)
+					</option>
+					<option value='3'>
+						Moderately Active (moderate exercise 3-5 days/week)
+					</option>
+					<option value='4'>
+						Very Active (hard exercise 6-7 days/week)
+					</option>
+					<option value='5'>
+						Super Active (very hard exercise & physical job)
+					</option>
+				</Select>
+				<ButtonContainer>
+					<Button>Calculate</Button>
+				</ButtonContainer>
 			</Form>
 		</Container>
 	);
