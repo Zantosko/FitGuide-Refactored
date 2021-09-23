@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Nav = styled.header`
-	width: 100vw;
+	width: 100%;
 	height: 75px;
 	background-color: black;
 	box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2);

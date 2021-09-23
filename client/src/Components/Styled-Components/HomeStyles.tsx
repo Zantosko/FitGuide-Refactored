@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Title = styled.h1`
 	color: #fff;
 	margin-bottom: 3rem;
-	font-size: 8rem;
+	font-size: 5rem;
 `;
 
 export const HomeButton = styled.button`

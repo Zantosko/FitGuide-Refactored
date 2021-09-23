@@ -10,7 +10,8 @@ export const Container = styled.div`
 
 export const Title = styled.h1`
 	color: #29bbad;
-	font-size: 3rem;
+	font-size: 2.4rem;
+	font-weight: bold;
 	margin-bottom: 2rem;
 `;
 
@@ -18,8 +19,8 @@ export const Form = styled.form`
 	margin: 1rem;
 	padding: 1rem;
 	background-color: #f1f1f1;
-	height: 70%;
-	width: 50%;
+	height: 70vh;
+	width: 55vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -27,7 +28,7 @@ export const Form = styled.form`
 `;
 
 export const RadioContainer = styled.div`
-	width: 170px;
+	width: 150px;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 3rem;
@@ -80,7 +81,7 @@ export const ButtonContainer = styled.div`
 	width: 100%;
 `;
 
-export const Button = styled.button`
+export const FormButton = styled.button`
 	padding: 0.55rem;
 	width: 200px;
 	border: none;

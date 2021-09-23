@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Container,
 	Title,
@@ -10,12 +10,30 @@ import {
 	Span,
 	Label,
 	ButtonContainer,
-	Button,
+	FormButton,
 } from './Styled-Components/CalorieNeedsStyles';
+import { Modal } from 'antd';
 
 interface CalorieNeedsProps {}
 
 export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
+	const [isModalVisible, setIsModalVisible] = useState(false);
+
+	const showModal = (
+		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+	) => {
+		e.preventDefault();
+		setIsModalVisible(true);
+	};
+
+	const handleOk = () => {
+		setIsModalVisible(false);
+	};
+
+	const handleCancel = () => {
+		setIsModalVisible(false);
+	};
+
 	return (
 		<Container>
 			<Title>Calorie Calculator</Title>
@@ -31,14 +49,26 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 					</label>
 				</RadioContainer>
 				<Label htmlFor='height'>Height</Label>
-				<Input type='text' name='height' />
+				<Input
+					type='number'
+					name='height'
+					placeholder='Enter height in inches (1ft = 12in)'
+				/>
 				<Label htmlFor='weight'>Weight</Label>
-				<Input type='text' name='weight' />
+				<Input
+					type='number'
+					name='weight'
+					placeholder='Enter weight in pounds (1kg = 2.2lbs)'
+				/>
 				<Label htmlFor='age'>Age</Label>
-				<Input type='text' name='age' />
+				<Input
+					type='number'
+					name='age'
+					placeholder='How old are you?'
+				/>
 				<Label htmlFor='activity'>Activity Level</Label>
 				<Select name='' id=''>
-					<option value='' disabled selected>
+					<option value='' disabled>
 						How active are you?
 					</option>
 					<option value='1'>Sedentary (little or no exercise)</option>
@@ -56,8 +86,21 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 					</option>
 				</Select>
 				<ButtonContainer>
-					<Button>Calculate</Button>
+					<FormButton onClick={(e) => showModal(e)}>
+						Calculate
+					</FormButton>
 				</ButtonContainer>
+				<Modal
+					title='Calorie Requirements'
+					visible={isModalVisible}
+					onOk={handleOk}
+					onCancel={handleCancel}
+					bodyStyle={{ height: '60vh' }}
+				>
+					<p>Some contents...</p>
+					<p>Some contents...</p>
+					<p>Some contents...</p>
+				</Modal>
 			</Form>
 		</Container>
 	);
