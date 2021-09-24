@@ -95,7 +95,7 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 					visible={isModalVisible}
 					onOk={handleOk}
 					onCancel={handleCancel}
-					bodyStyle={{ height: '60vh' }}
+					bodyStyle={{ height: '50vh' }}
 				>
 					<p>Some contents...</p>
 					<p>Some contents...</p>
