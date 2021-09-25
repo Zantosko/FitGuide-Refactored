@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import {
 	Container,
 	Title,
@@ -16,13 +17,22 @@ import { Modal } from 'antd';
 
 interface CalorieNeedsProps {}
 
-export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
-	const [isModalVisible, setIsModalVisible] = useState(false);
+type FormData = {
+	gender: boolean;
+	height: number;
+};
 
+export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
+	const [isModalVisible, setIsModalVisible] =
+		useState<boolean>(false);
+	const { register, handleSubmit } = useForm<FormData>();
+
+	//* Modal Methods
 	const showModal = (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
 		e.preventDefault();
+
 		setIsModalVisible(true);
 	};
 
@@ -34,25 +44,29 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 		setIsModalVisible(false);
 	};
 
+	const onSubmit = (data: any) => {
+		console.log(data);
+	};
+
 	return (
 		<Container>
 			<Title>Calorie Calculator</Title>
-			<Form action=''>
+			<Form onSubmit={handleSubmit(onSubmit)}>
 				<RadioContainer>
 					<label htmlFor='gender'>
-						<Radio type='radio' name='gender' />
+						<Radio type='radio' name='gender' value={1} />
 						<Span>Male</Span>
 					</label>
 					<label htmlFor='gender'>
-						<Radio type='radio' name='gender' />
+						<Radio type='radio' name='gender' value={2} />
 						<Span>Female</Span>
 					</label>
 				</RadioContainer>
 				<Label htmlFor='height'>Height</Label>
 				<Input
 					type='number'
-					name='height'
 					placeholder='Enter height in inches (1ft = 12in)'
+					{...register('height')}
 				/>
 				<Label htmlFor='weight'>Weight</Label>
 				<Input
@@ -68,7 +82,7 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 				/>
 				<Label htmlFor='activity'>Activity Level</Label>
 				<Select name='' id=''>
-					<option value='' disabled>
+					<option value='' disabled selected>
 						How active are you?
 					</option>
 					<option value='1'>Sedentary (little or no exercise)</option>
