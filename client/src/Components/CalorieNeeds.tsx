@@ -18,9 +18,19 @@ import { Modal } from 'antd';
 interface CalorieNeedsProps {}
 
 type FormData = {
-	gender: boolean;
+	gender: number;
 	height: number;
+	weight: number;
+	age: number;
 };
+
+enum ActivityEnum {
+	sedentary,
+	lightlyActive,
+	moderatelyActive,
+	veryActive,
+	superActive,
+}
 
 export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 	const [isModalVisible, setIsModalVisible] =
@@ -31,7 +41,7 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 	const showModal = (
 		e: React.MouseEvent<HTMLButtonElement, MouseEvent>
 	) => {
-		e.preventDefault();
+		// e.preventDefault();
 
 		setIsModalVisible(true);
 	};
@@ -44,7 +54,7 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 		setIsModalVisible(false);
 	};
 
-	const onSubmit = (data: any) => {
+	const onSubmit: SubmitHandler<FormData> = (data) => {
 		console.log(data);
 	};
 
@@ -54,11 +64,11 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 			<Form onSubmit={handleSubmit(onSubmit)}>
 				<RadioContainer>
 					<label htmlFor='gender'>
-						<Radio type='radio' name='gender' value={1} />
+						<Radio type='radio' value={1} {...register('gender')} />
 						<Span>Male</Span>
 					</label>
 					<label htmlFor='gender'>
-						<Radio type='radio' name='gender' value={2} />
+						<Radio type='radio' value={2} {...register('gender')} />
 						<Span>Female</Span>
 					</label>
 				</RadioContainer>
