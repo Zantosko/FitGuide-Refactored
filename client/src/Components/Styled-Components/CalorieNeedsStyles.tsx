@@ -17,10 +17,10 @@ export const Title = styled.h1`
 
 export const Form = styled.form`
 	margin: 1rem;
-	padding: 1rem;
+	padding: 1.3rem;
 	background-color: #f1f1f1;
-	height: 70vh;
-	width: 55vw;
+	height: 75vh;
+	width: 60vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -31,7 +31,7 @@ export const RadioContainer = styled.div`
 	width: 150px;
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 3rem;
+	margin-bottom: 2rem;
 `;
 
 export const Radio = styled.input`
@@ -96,4 +96,9 @@ export const FormButton = styled.button`
 		cursor: pointer;
 		background-color: #29bbad;
 	}
+`;
+
+export const ErrorMessage = styled.span`
+	color: #fa4343;
+	font-size: 12px;
 `;
