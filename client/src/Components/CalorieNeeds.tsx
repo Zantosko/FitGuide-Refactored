@@ -37,6 +37,8 @@ enum ActivityEnum {
 export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 	const [isModalVisible, setIsModalVisible] =
 		useState<boolean>(false);
+
+	//* Allows access to react-hook-form methods
 	const {
 		register,
 		handleSubmit,
@@ -56,6 +58,7 @@ export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
 		setIsModalVisible(false);
 	};
 
+	//* Handle Form Submission
 	const onSubmit: SubmitHandler<FormData> = (data) => {
 		console.log(data);
 		showModal();
