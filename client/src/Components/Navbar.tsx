@@ -23,7 +23,6 @@ import { Link } from 'react-router-dom';
 interface NavbarProps {}
 
 export const Navbar: React.FC<NavbarProps> = () => {
-	//* Handles hamburger menu activation
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	const size = useWindowSize();
 
