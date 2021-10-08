@@ -26,6 +26,7 @@ interface FormData {
 	activityLevel: ActivityEnum;
 }
 
+//* Handles Activity Choices
 enum ActivityEnum {
 	sedentary = 'sedentary',
 	lightlyActive = 'lightlyActive',
