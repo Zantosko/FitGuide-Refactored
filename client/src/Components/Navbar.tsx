@@ -22,7 +22,7 @@ import { Link } from 'react-router-dom';
 
 interface NavbarProps {}
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar = (props: NavbarProps) => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);
 	const size = useWindowSize();
 
