@@ -3,7 +3,7 @@ import { Title, HomeButton } from './Styled-Components/HomeStyles';
 
 interface HomeProps {}
 
-export const Home: React.FC<HomeProps> = () => {
+export const Home = (props: HomeProps) => {
 	return (
 		<div className='hero'>
 			<Title>FitGuide</Title>
