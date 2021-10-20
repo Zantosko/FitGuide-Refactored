@@ -35,7 +35,7 @@ enum ActivityEnum {
 	superActive = 'superActive',
 }
 
-export const CalorieNeeds: React.FC<CalorieNeedsProps> = () => {
+export const CalorieNeeds = (props: CalorieNeedsProps) => {
 	const [isModalVisible, setIsModalVisible] =
 		useState<boolean>(false);
 
