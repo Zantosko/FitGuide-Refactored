@@ -24,6 +24,8 @@ interface NavbarProps {}
 
 export const Navbar = (props: NavbarProps) => {
 	const [showMenu, setShowMenu] = useState<boolean>(false);
+
+	//* Custom hook to access window size changes
 	const size = useWindowSize();
 
 	let menu;
